@@ -1,0 +1,69 @@
+name: Bug Report
+description: Report a bug or unexpected behaviour
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out all sections as completely as possible so the issue can be reproduced and fixed.
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproduction Steps
+      description: Step-by-step instructions to reproduce the bug.
+      placeholder: |
+        1. Go to ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behaviour
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behaviour
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Error Output
+      description: Paste relevant log output or error messages.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Describe the environment where the bug was observed.
+      placeholder: |
+        - OS: ...
+        - Go version: ...
+        - Tool version / commit: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Define what "fixed" looks like.
+      placeholder: |
+        - [ ] AC1: The bug no longer occurs when ...
+        - [ ] AC2: Regression test added for ...
+    validations:
+      required: true

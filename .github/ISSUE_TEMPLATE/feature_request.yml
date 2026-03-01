@@ -1,0 +1,73 @@
+name: Feature Request
+description: Propose a new feature or enhancement
+title: "[Feature] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to propose a feature. Please fill out all sections as completely as possible so that a Copilot coding agent can implement this feature without additional clarification.
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background
+      description: Why is this feature needed? What problem does it solve?
+      placeholder: Describe the motivation and context.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in scope for this feature? List the specific changes or additions.
+      placeholder: |
+        - In scope: ...
+        - In scope: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Define the conditions that must be met for this feature to be considered complete.
+      placeholder: |
+        - [ ] AC1: ...
+        - [ ] AC2: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of Scope
+      description: Explicitly list anything that should NOT be implemented as part of this feature.
+      placeholder: |
+        - Not included: ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: test_plan
+    attributes:
+      label: Test Plan
+      description: How should the implementation be verified?
+      placeholder: |
+        - Unit tests for ...
+        - Integration tests for ...
+        - Manual verification steps ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks
+      description: Any known risks, dependencies, or potential breaking changes.
+      placeholder: |
+        - Risk: ...
+        - Dependency: ...
+    validations:
+      required: false
