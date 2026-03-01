@@ -1,0 +1,23 @@
+name: Agent Kick (issue labeled)
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+
+jobs:
+  kick:
+    name: Post agent instruction comment
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'agent:build-pr'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post Copilot coding-agent instruction
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./.github/workflows/scripts/agent-kick.js');
+            await script({ github, context });
