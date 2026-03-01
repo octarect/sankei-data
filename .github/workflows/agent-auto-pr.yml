@@ -1,0 +1,24 @@
+name: Agent Auto PR (issue labeled)
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-pr:
+    name: Create branch and PR
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'agent:build-pr'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create branch and open PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./.github/workflows/scripts/agent-auto-pr.js');
+            await script({ github, context });
